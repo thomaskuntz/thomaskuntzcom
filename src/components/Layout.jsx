@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
+import MushroomGarden from './MushroomGarden'
 
 function Layout() {
   return (
@@ -8,6 +9,7 @@ function Layout() {
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
         <Outlet />
       </main>
+      <MushroomGarden />
       <footer className="border-t border-parchment-300 bg-forest-900 text-parchment-200">
         <div className="max-w-4xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-body text-sm">
