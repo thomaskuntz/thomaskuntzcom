@@ -47,15 +47,14 @@ function About() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
           {[
+            '.NET / C#',
+            'SQL Server',
             'React',
             'TypeScript',
-            '.NET / C#',
             'Node.js',
             'Python',
-            'AWS',
             'PostgreSQL',
             'Docker',
-            'GraphQL',
           ].map((skill) => (
             <div
               key={skill}
@@ -111,7 +110,7 @@ function About() {
         </h2>
         <div className="flex justify-center gap-6">
           <a
-            href="https://github.com/thomaskuntzz"
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-forest-600 hover:text-mystic-600 transition-colors font-body"
@@ -119,7 +118,7 @@ function About() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/thomaskuntz"
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-forest-600 hover:text-mystic-600 transition-colors font-body"
