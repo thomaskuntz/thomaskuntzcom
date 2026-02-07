@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@theme {
+  /* Parchment backgrounds */
+  --color-parchment-50: #fefcf7;
+  --color-parchment-100: #fdf6e7;
+  --color-parchment-200: #f9ead0;
+  --color-parchment-300: #f3d9a9;
+  --color-parchment-400: #e8c47e;
+  --color-parchment-500: #d4a84e;
+
+  /* Enchanted forest greens */
+  --color-forest-50: #f0f7f1;
+  --color-forest-100: #d8ecd9;
+  --color-forest-200: #a8d5ab;
+  --color-forest-300: #6bb870;
+  --color-forest-400: #3d8b42;
+  --color-forest-500: #2d6a30;
+  --color-forest-600: #1e4d20;
+  --color-forest-700: #163818;
+  --color-forest-800: #0f2610;
+  --color-forest-900: #0a1a0b;
+
+  /* Deep mystical purples */
+  --color-mystic-50: #f5f0fa;
+  --color-mystic-100: #e8ddf3;
+  --color-mystic-200: #d1bbe7;
+  --color-mystic-300: #b48fd6;
+  --color-mystic-400: #9464c1;
+  --color-mystic-500: #7a45ab;
+  --color-mystic-600: #5e3485;
+  --color-mystic-700: #462766;
+  --color-mystic-800: #311c48;
+  --color-mystic-900: #1f1230;
+
+  /* Warm golds */
+  --color-gold-50: #fefbe8;
+  --color-gold-100: #fdf4bf;
+  --color-gold-200: #fce985;
+  --color-gold-300: #f9d63e;
+  --color-gold-400: #f0bf1a;
+  --color-gold-500: #d4a00e;
+  --color-gold-600: #a87a09;
+  --color-gold-700: #7d5a0b;
+  --color-gold-800: #5a4010;
+  --color-gold-900: #3a2a0d;
+
+  /* Font families */
+  --font-heading: "Cinzel", serif;
+  --font-body: "Lora", serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-parchment-50);
+  color: var(--color-forest-900);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+/* Parchment texture via subtle gradient */
+.parchment-bg {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-parchment-50) 0%,
+      var(--color-parchment-100) 30%,
+      var(--color-parchment-50) 50%,
+      var(--color-parchment-200) 70%,
+      var(--color-parchment-100) 100%
+    );
+}
+
+/* Ornamental divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-gold-500);
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
+}
+
+/* Blog post prose styling */
+.prose-wizard h1,
+.prose-wizard h2,
+.prose-wizard h3,
+.prose-wizard h4 {
+  font-family: var(--font-heading);
+  color: var(--color-forest-700);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-wizard h1 {
+  font-size: 2rem;
+}
+
+.prose-wizard h2 {
+  font-size: 1.5rem;
+}
+
+.prose-wizard h3 {
+  font-size: 1.25rem;
+}
+
+.prose-wizard p {
+  margin-bottom: 1em;
+  line-height: 1.8;
+}
+
+.prose-wizard a {
+  color: var(--color-mystic-600);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold-400);
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.prose-wizard a:hover {
+  color: var(--color-mystic-800);
+}
+
+.prose-wizard ul,
+.prose-wizard ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.prose-wizard li {
+  margin-bottom: 0.25em;
+  line-height: 1.7;
+}
+
+.prose-wizard blockquote {
+  border-left: 3px solid var(--color-gold-400);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: var(--color-forest-600);
+  font-style: italic;
+}
+
+.prose-wizard pre {
+  background-color: var(--color-forest-900);
+  color: var(--color-parchment-100);
+  border-radius: 0.5rem;
+  padding: 1.25em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border: 1px solid var(--color-forest-700);
+}
+
+.prose-wizard code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.prose-wizard :not(pre) > code {
+  background-color: var(--color-parchment-200);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  color: var(--color-mystic-700);
+}
+
+.prose-wizard img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 1.5em 0;
+}
+
+.prose-wizard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.prose-wizard th,
+.prose-wizard td {
+  border: 1px solid var(--color-parchment-300);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.prose-wizard th {
+  background-color: var(--color-parchment-200);
+  font-family: var(--font-heading);
+  font-size: 0.9em;
+}
+
+/* Highlight.js dark theme override for code blocks */
+.prose-wizard pre .hljs {
+  background: transparent;
+  color: var(--color-parchment-100);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
